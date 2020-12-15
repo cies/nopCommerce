@@ -492,9 +492,9 @@ namespace System.Linq
         /// <typeparam name="TSource">Query element type</typeparam>
         /// <param name="source">Source query</param>
         /// <returns>Array with query results</returns>
-        public static Task<TSource[]> ToArrayAsync<TSource>(this IQueryable<TSource> source)
+        public static async Task<TSource[]> ToArrayAsync<TSource>(this IQueryable<TSource> source)
         {
-            return AsyncExtensions.ToArrayAsync(source);
+            return await AsyncExtensions.ToArrayAsync(source);
         }
 
         /// <summary>
